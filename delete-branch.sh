@@ -7,7 +7,7 @@ for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
 done
 
 # select branches with fzf
-branches=`echo "${branches[@]}" | tr ' ' '\n' | fzf --multi --prompt "select branch(es)"`
+branches=`echo "${branches[@]}" | tr ' ' '\n' | fzf --multi --prompt "select branch(es): "`
 
 # ensure a branch was chosen
 [ -z "$branches" ] && echo "No branch selected." && exit
